@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import {UserContext} from "./context/UserContext";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Table from "./components/Table";
-import Home from "./components/Home";
 import ErrorMessage from "./components/ErrorMessage";
 import SuccessMessage from "./components/SuccessMessage";
 import PokemonModal from "./components/PokemonModal";
@@ -30,7 +28,7 @@ const App = () => {
                 "Content-Type": "application/json",
             },
         };
-        const response = await fetch("/api", requestOptions);
+        const response = await fetch("https://edvora7.herokuapp.com/api", requestOptions);
         const data = await response.json();
 
         if (!response.ok) {
@@ -66,7 +64,7 @@ const App = () => {
                 Authorization: "Bearer " + token,
             },
         };
-        const response = await fetch("/api/pokemons", requestOptions);
+        const response = await fetch("https://edvora7.herokuapp.com/api/pokemons", requestOptions);
         if (!response.ok) {
             setErrorMessage("Something went wrong. Couldn't load the pokemons");
             setTimeout(() => {
@@ -111,7 +109,7 @@ const App = () => {
                 url: url,
             }),
         };
-        const response = await fetch("/api/Pokemons", requestOptions);
+        const response = await fetch("https://edvora7.herokuapp.com/api/Pokemons", requestOptions);
         if (!response.ok) {
             setErrorMessage("Something went wrong when adding pokemon to the favorite");
             setTimeout(() => {
@@ -137,7 +135,7 @@ const App = () => {
                 Authorization: "Bearer " + token,
             },
         };
-        fetch(`/api/pokemons/${id}`, requestOptions);
+        fetch(`https://edvora7.herokuapp.com/api/pokemons/${id}`, requestOptions);
         console.log("before", FavPokemons)
         FavPokemons.slice(index, 1)
         console.log("after", FavPokemons)

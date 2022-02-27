@@ -18,7 +18,7 @@ const Login = () => {
             ),
         };
 
-        const response = await fetch("/api/token", requestOptions);
+        const response = await fetch("https://edvora7.herokuapp.com/api/token", requestOptions);
         const data = await response.json();
 
         if (!response.ok) {
