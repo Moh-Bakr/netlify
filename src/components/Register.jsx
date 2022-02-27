@@ -17,7 +17,7 @@ const Register = () => {
             body: JSON.stringify({email: email, hashed_password: password}),
         };
 
-        const response = await fetch("https://edvora7.herokuapp.com/api/users", requestOptions);
+        const response = await fetch("/api/users", requestOptions);
         const data = await response.json();
 
         if (!response.ok) {
