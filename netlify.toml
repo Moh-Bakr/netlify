@@ -1,7 +1,6 @@
-#[[redirects]]
-#  from = "/api/*"
-#  to = "/https://edvora7.herokuapp.com/:splat"
-#  status = 200
-
 [build]
   publish = "."
+
+[[redirects]]
+  from = "test"
+  to = "blog"
