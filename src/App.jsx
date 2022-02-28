@@ -136,9 +136,7 @@ const App = () => {
             },
         };
         fetch(`https://edvora7.herokuapp.com/api/pokemons/${id}`, requestOptions);
-        console.log("before", FavPokemons)
         FavPokemons.slice(index, 1)
-        console.log("after", FavPokemons)
         setSuccessMessage("removed successfully from the favorite")
         setTimeout(() => {
             setSuccessMessage("")
